@@ -108,6 +108,7 @@ def read_grid(file_path):
     read any file written by the write_grid function.  Returns the
     grid of pixels.
     """
+    # Open file --> line_of_text --> change into list
 
     # REMOVE THIS COMMENT AND REPLACE IT WITH YOUR CODE ...
 
@@ -135,6 +136,11 @@ def get_pixel_at(pixel_grid, i, j):
     Returns 0 if i or j is out of bounds for the given pixel_grid.
     Returns 0 if i or j is a negative value.
     """
+    if i < 0 or j < 0 or i > len(pixel_grid) or j > len(pixel_grid):
+        return "0"
+    else:
+        return pixel_grid [i, j]
+            
 
     # REMOVE THIS COMMENT AND REPLACE IT WITH YOUR CODE ...
 
@@ -193,7 +199,11 @@ def average_of_surrounding(pixel_grid, i, j):
     and column j and the eight pixels surrounding it.
     """
     pixel_sum = 0
+   
     # REMOVE THIS COMMENT AND REPLACE IT WITH YOUR CODE ...
+   for m in [-1, 0, 1]:
+        for n in [-1,0, 1]:
+            pixel_sum += get_pixel_at[i+m,j+n]
 
     # pixel_sum should be an integer. We intend for this to be
     # truncating integer division.
@@ -233,6 +243,7 @@ def blur(pixel_grid):
     the input grid.
     """
     blurred_grid = []
+    for items in pixel_grid
 
     # REMOVE THIS COMMENT AND REPLACE IT WITH YOUR CODE ...
 
